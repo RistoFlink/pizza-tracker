@@ -25,10 +25,10 @@ class PizzaController extends Controller
         ]);
     }
 
-    public function update(Pizza $pizza, Request $request): Response
+    public function update(Pizza $pizza, Request $request)
     {
-        return Inertia::render("Pizzas/Update", [
-            "pizza" => $pizza
+        $pizza->update([
+            "status" => $request->status,
         ]);
     }
 }
